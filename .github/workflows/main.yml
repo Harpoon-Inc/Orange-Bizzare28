@@ -12,8 +12,9 @@ jobs:
         run: |
           import os
           for q in (os.getenv("ORG_VAL")):
-            print(q,end="")
+            print(q)
+            
           for q in (os.getenv("REPO_VAL")):
-            print(q,end="")
+            print(q)
 
         shell: python
