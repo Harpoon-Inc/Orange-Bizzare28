@@ -1,17 +1,16 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 
 on: [push]
-
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Org and Repo Secrets
+      - name: Set env as secret
         env:
-          ORG_SECRET: ${{ secrets.ORG_HUSH }}
-          REPO_SECRET: ${{ secrets.REPO_HUSH }}
+          ORG_VAL: ${{ secrets.ORG_HUSH }}
+          REPO_VAL: ${{ secrets.REPO_HUSH }}
         run: |
           import os
-          print("ORG_SECRET:", os.getenv("ORG_SECRET"))
-          print("REPO_SECRET:", os.getenv("REPO_SECRET"))
+          for q in (os.getenv("ORG_VAL")):
+            print(q)
         shell: python
