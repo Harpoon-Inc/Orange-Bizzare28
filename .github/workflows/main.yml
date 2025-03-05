@@ -10,6 +10,6 @@ jobs:
           MY_VAL: ${{ secrets.SECRET_REPO }}
         run: |
           import os
-          for q in (os.getenv("ORG_HUSH")):
+          for q in (os.getenv("MY_VAL")):
             print(q)
         shell: python
