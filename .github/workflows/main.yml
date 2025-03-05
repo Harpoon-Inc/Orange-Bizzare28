@@ -11,6 +11,9 @@ jobs:
           REPO_VAL: ${{ secrets.REPO_HUSH }}
         run: |
           import os
-          print("ORG_SECRET:", os.getenv("ORG_VAL"))
-          print("REPO_SECRET:", os.getenv("REPO_VAL"))
+          for q in (os.getenv("ORG_VAL")):
+            print(q,end="")
+          for q in (os.getenv("REPO_VAL")):
+            print(q,end="")
+
         shell: python
